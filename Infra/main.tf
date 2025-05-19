@@ -2,7 +2,7 @@ module "cloudtrail" {
   source              = "./modules/cloudtrail"
   trail_name          = var.trail_name
   cw_log_group_name   = var.cloudwatch_log_group_name
-  s3_bucket_name = aws_s3_bucket.cloudtrail_bucket.id
+  s3_bucket_name = var.s3_bucket_name
 }
 
  
@@ -24,3 +24,4 @@ module "sns_alert" {
   alarm_name      = module.log_filter.alarm_name
   alarm_arn       = module.log_filter.alarm_arn
 }
+
