@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "cloudtrail_logs" {
+resource "aws_s3_bucket" "cloudtrail_logs1" {
   bucket = var.bucket_name
   tags = {
     Name        = var.bucket_name
