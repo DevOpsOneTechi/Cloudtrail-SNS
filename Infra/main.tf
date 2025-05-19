@@ -1,3 +1,9 @@
+module "s3_bucket" {
+  source       = "./modules/s3_bucket"
+  bucket_name  = "my-cloudtrail-log-bucket"
+  environment  = "dev"
+}
+
 module "cloudtrail" {
   source              = "./modules/cloudtrail"
   trail_name          = var.trail_name
@@ -24,4 +30,5 @@ module "sns_alert" {
   alarm_name      = module.log_filter.alarm_name
   alarm_arn       = module.log_filter.alarm_arn
 }
+
 
