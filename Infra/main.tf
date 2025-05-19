@@ -20,6 +20,7 @@ module "log_filter" {
   metric_namespace  = var.metric_namespace
   metric_name       = var.metric_name
   alarm_actions = [module.sns_alert.sns_topic_arn]
+  alarm_name  = "ConsoleLoginAlarm"
 
 }
 
