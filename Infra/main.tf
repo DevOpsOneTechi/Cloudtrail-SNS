@@ -2,6 +2,7 @@ module "cloudtrail" {
   source              = "./modules/cloudtrail"
   trail_name          = var.trail_name
   cw_log_group_name   = var.cloudwatch_log_group_name
+  s3_bucket_name = aws_s3_bucket.cloudtrail_bucket.id
 }
 
  
