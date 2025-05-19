@@ -58,6 +58,6 @@ variable "notification_emails" {
 variable "s3_bucket_name" {
   description = "The S3 bucket where CloudTrail logs will be stored"
   type        = string
-  value       = "cloud-trail-bucket"
+  default      = "cloud-trail-bucket"
 }
 
