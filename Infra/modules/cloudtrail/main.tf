@@ -32,17 +32,18 @@ resource "aws_iam_role_policy" "ct_policy" {
 
 }
 
- 
-
-data "aws_iam_policy_document" "ct_policy" {
-  statement {
-    actions = [
-      "logs:CreateLogStream",
-      "logs:PutLogEvents"
-    ]
-    resources = ["${aws_cloudwatch_log_group.ct_logs.arn}:*"]
-  }
+data "aws_iam_policy_document" "ct_policy" { 
+statement {
+  actions = [
+    "logs:CreateLogStream",
+    "logs:PutLogEvents"
+  ]
+  resources = [
+    aws_cloudwatch_log_group.ct_logs.arn,
+    "${aws_cloudwatch_log_group.ct_logs.arn}:*"
+  ]
 }
+
 
  
 
