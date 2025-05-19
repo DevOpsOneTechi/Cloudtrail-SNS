@@ -40,7 +40,7 @@ data "aws_iam_policy_document" "cloudtrail_s3_policy" {
     ]
 
     resources = [
-      aws_s3_bucket.cloudtrail_logs.arn,
+      "${aws_s3_bucket.cloudtrail_logs.arn}",
       "${aws_s3_bucket.cloudtrail_logs.arn}/*"
     ]
 
