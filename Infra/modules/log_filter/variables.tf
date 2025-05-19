@@ -10,3 +10,8 @@ variable "alarm_actions" {
   description = "List of actions to trigger when alarm is triggered"
   type        = list(string)
 }
+
+variable "alarm_name" {
+  description = "Name of the CloudWatch alarm"
+  type        = string
+}
