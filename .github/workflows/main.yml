@@ -1,4 +1,4 @@
-name: infra destroy
+name: infra creation
 
 on:
   workflow_dispatch:
