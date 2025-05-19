@@ -1,6 +1,6 @@
 resource "aws_cloudwatch_metric_alarm" "login_alarm" {
 
-  alarm_name          = var.alarm_name
+  alarm_name  = "ConsoleLoginAlarm"
   alarm_description   = "Alarm on successful console login events"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
