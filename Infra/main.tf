@@ -34,6 +34,8 @@ module "sns_alert" {
   alarm_arn       = module.log_filter.alarm_arn
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
+  metric_name      = "ConsoleLoginFailures"
+  metric_namespace = "AWS/CloudTrail"
 }
 
 
