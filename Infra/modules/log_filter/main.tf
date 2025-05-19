@@ -11,7 +11,7 @@ resource "aws_cloudwatch_metric_alarm" "login_alarm" {
   period              = 300
 
 
-  alarm_actions = [] 
+  alarm_actions = [aws_sns_topic.alerts.arn]
 
 }
 
