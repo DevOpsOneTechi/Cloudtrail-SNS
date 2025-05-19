@@ -1,3 +1,3 @@
 output "topic_arn" {
-  value = aws_sns_topic.alerts.arn
+  value = module.sns_alert_sns_topic.alerts.arn
 }
