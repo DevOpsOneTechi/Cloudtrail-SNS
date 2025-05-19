@@ -32,20 +32,19 @@ data "aws_iam_policy_document" "cloudtrail_s3_policy" {
       identifiers = ["cloudtrail.amazonaws.com"]
     }
 
- 
-
+    # Specify actions
     actions = [
-      "s3:GetBucketAcl",
-      "s3:PutObject"
+      "s3:GetBucketAcl",   # Only for bucket ARN
+      "s3:PutObject"       # For objects in the bucket
     ]
 
+    # Define separate resource ARNs
     resources = [
-      "${aws_s3_bucket.cloudtrail_logs.arn}",
-      "${aws_s3_bucket.cloudtrail_logs.arn}/*"
+      aws_s3_bucket.cloudtrail_logs.arn,           # Bucket-level action (GetBucketAcl)
+      "${aws_s3_bucket.cloudtrail_logs.arn}/*"    # Object-level action (PutObject)
     ]
 
- 
-
+    # Condition for PutObject
     condition {
       test     = "StringEquals"
       variable = "s3:x-amz-acl"
