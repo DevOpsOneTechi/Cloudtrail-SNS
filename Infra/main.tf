@@ -32,6 +32,8 @@ module "sns_alert" {
   email_addresses = var.notification_emails
   alarm_name      = module.log_filter.alarm_name
   alarm_arn       = module.log_filter.alarm_arn
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  evaluation_periods  = 1
 }
 
 
