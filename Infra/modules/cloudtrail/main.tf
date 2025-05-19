@@ -53,17 +53,6 @@ resource "aws_cloudtrail" "trail" {
   enable_logging                = true
   cloud_watch_logs_role_arn     = aws_iam_role.ct_role.arn
   cloud_watch_logs_group_arn    = aws_cloudwatch_log_group.ct_logs.arn
-
+  s3_bucket_name = var.s3_bucket_name
 }
 
-
-resource "aws_s3_bucket" "cloudtrail_bucket" {
-  bucket = "my-cloudtrail-bucket"
-}
-
-resource "aws_s3_bucket_versioning" "bucket_versioning" {
-  bucket = aws_s3_bucket.cloudtrail_bucket.id
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
