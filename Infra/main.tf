@@ -19,6 +19,8 @@ module "log_filter" {
   filter_pattern    = var.login_filter_pattern
   metric_namespace  = var.metric_namespace
   metric_name       = var.metric_name
+  alarm_actions = [module.sns_alert.sns_topic_arn]
+
 }
 
  
