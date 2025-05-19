@@ -9,7 +9,7 @@ resource "aws_cloudwatch_metric_alarm" "login_alarm" {
   namespace           = var.metric_namespace
   statistic           = "Sum"
   period              = 300
-  alarm_actions = [module.sns_alert.sns_topic_arn]
+  alarm_actions = var.alarm_actions
 
 }
 
