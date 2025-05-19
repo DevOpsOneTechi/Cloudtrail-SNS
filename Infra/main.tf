@@ -1,6 +1,6 @@
 module "s3_bucket" {
   source       = "./modules/s3_bucket"
-  bucket_name  = "my-cloudtrail-log-bucket"
+  bucket_name  = "my-cloudtrail-log-bucket123"
   environment  = "dev"
 }
 
