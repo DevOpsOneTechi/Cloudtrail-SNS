@@ -54,3 +54,10 @@ variable "notification_emails" {
   description = "List of emails to notify"
   type        = list(string)
 }
+
+variable "s3_bucket_name" {
+  description = "The S3 bucket where CloudTrail logs will be stored"
+  type        = string
+  value       = "cloud-trail-bucket"
+}
+
