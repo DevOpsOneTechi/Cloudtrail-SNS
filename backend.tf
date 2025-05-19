@@ -3,7 +3,7 @@ terraform {
 
   backend "s3" {
     bucket       = "mycloudtrailbucket123"
-    key          = "vpcec2/terraform.tfstateec21"
+    key          = "cloudtrailsns/terraform.tfstatec21"
     region       = "us-east-1"
     encrypt      = true
     use_lockfile = true
